@@ -168,25 +168,6 @@ If you do not have a working x86_64 machine, you can still build modules on an A
 
    You can try it with the `hello, world!` module.
 
-## Grading
-
-We have eight demo items here. To demonstrate yourimplementation, you must *always* perform from step 1 to step N (N <= 8). You cannot demo only a single item (except item #1) and get the points. You can demonstrate items #1 and #2 in your local machine. For items #3 to #8, you can simply upload your module to our service and our service will run the test cases automatically.
-
-1. [10 pts] You can boot the Linux VM in a supported environment.
-
-1. [10 pts] You can put the `hello, world!` module into the emulator and load it.
-
-1. [10 pts] You can put your `kshram.ko` module into the emulator and automatically create 8 device files (from `kshram0` to `kshram7`) in `/dev` after loaded the module.
-
-1. [5 pts] Unloading the kernel module does not crash the system (***Module unload test #1***).
-
-1. [20 pts] Load your module again, and you can pass the test using the `check_msg` program.
-
-1. [20 pts] You can pass the test using the `check_resize` program.
-
-1. [20 pts] You can pass the test using the `check_fork` program.
-
-1. [5 pts] Unloading the kernel module does not crash the system (***Module unload test #2***).
 
 :::danger
 We have an execution time limit for your kernel module. You have to pass the tests within 120s (kernel boot time inclusive).
