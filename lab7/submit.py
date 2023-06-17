@@ -74,7 +74,6 @@ shellcode += shellcraft.exit( 37)
 sh = asm(shellcode)
 # sh += rax_val + rdi_val + rsi_val + rdx_val + sym_value +b'\x00'
 ##########################share memory##################################
-# 连接到共享内存
 size = 4096
 shellcode = shellcraft.syscall('SYS_shmget', 0x1337, size,  0) 
 # shm_readonly = ctypes.c_int(0o400)
@@ -84,7 +83,7 @@ shellcode += shellcraft.syscall('SYS_shmat', 'rax', 0, 4096)
 # 從共享記憶體中寫出資料
 shellcode += shellcraft.write(1, 'rax', 100)
 
-# 分離共享記憶體
+
 shellcode += shellcraft.shmdt('rax')
 
 shellcode += shellcraft.exit( 37 )
@@ -119,7 +118,7 @@ shellcode += shellcraft.syscall( 'SYS_connect','rax', 'rsp', len(address_bytes))
 # 接收數據
 shellcode += shellcraft.read('r8', 'rsp', 100)  
 # shellcode += shellcraft.recv(, 'rsp', 100)
-# # 打印接收到的数据
+
 shellcode += shellcraft.write(1, 'rsp', 100)  
 shellcode += shellcraft.exit( 37)
 print(shellcode)
