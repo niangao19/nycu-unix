@@ -105,15 +105,7 @@ Here are some hints for you. You can solve the challenge locally and then verify
 
 1. The challenge server only accepts machine codes generated for Intel x86_64 CPU.
 
-## Grading
 
-- [25 pts] The server can handle your payload and report a normal termination status of status code 37.
-
-- [25 pts] You can show the FLAG read from the `/FLAG` file. 
-
-- [25 pts] You can show the FLAG stored in the shared memory. Note that you must remove all padded `null (\0)` bytes when displaying the FLAG. 
-
-- [25 pts] You can show the FLAG received from the internal network server.
 
 :::danger
 We have an execution time limit for your challenge. You have to solve the challenge within 60s.
